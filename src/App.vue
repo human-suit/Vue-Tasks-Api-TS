@@ -1,10 +1,57 @@
 <template>
   <nav>
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/createTask">Create Task</router-link> |
+    <router-link to="/settings">Settings</router-link>
   </nav>
   <router-view />
 </template>
+
+<script lang="ts">
+import { defineComponent } from "vue";
+import { useStore } from "vuex";
+interface Props {
+  msg: string;
+  count: number;
+}
+
+export default defineComponent({
+  props: {
+    msg: {
+      type: String,
+      default: "s",
+    },
+  },
+  // setup(props) {
+  //   const store = useStore();
+  //   console.log(store.state.tasks);
+  //   console.log(props.msg);
+  //   return { props };
+  // },
+  // setup(props:Props) {
+  //   console.log(props.msg);
+  //   return { props };
+  // },
+});
+</script>
+<!-- <script setup lang="ts">
+ interface Props {
+  msg: string;
+  count: number;
+}
+const props = defineProps<Props>()
+
+import {ref} from 'vue'
+const user = reactive<{name:string;age:number}>({
+  name:'ivan',
+  age:30
+});
+const message = ref<string>("Hi")
+const count = ref<number>(0)
+function increment(params:type) {
+  count.value++
+}
+</script> -->
 
 <style>
 #app {
