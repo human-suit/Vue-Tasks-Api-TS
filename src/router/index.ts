@@ -17,6 +17,11 @@ const routes: Array<RouteRecordRaw> = [
     name: "settings",
     component: import("../views/SettingView.vue"),
   },
+  {
+    path: "/item/:id",
+    name: "item",
+    component: import("../views/ItemView.vue"),
+  },
 ];
 
 const router = createRouter({

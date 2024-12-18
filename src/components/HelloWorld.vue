@@ -57,6 +57,10 @@
               <h3>State -> {{ item.srok }}</h3>
             </div>
             <button @click="deletTask(item.id, index)">Delet</button>
+
+            <router-link :to="{ name: 'item', params: { id: index } }"
+              ><button>Перейти</button></router-link
+            >
           </div>
         </li>
       </ul>
